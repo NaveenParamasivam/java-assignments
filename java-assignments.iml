@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/jfs_task02/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jfs_task03/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jfs_task04/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/jfs_task05/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/out" />
     </content>
     <orderEntry type="inheritedJdk" />
