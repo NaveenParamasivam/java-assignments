@@ -1,0 +1,74 @@
+/* page background and font */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    font-family: Arial, sans-serif;
+}
+
+/* wrapper to align heading and form side by side */
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px; /* space between text and form */
+}
+
+/* left side content */
+.left-content h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* form container */
+.form-container form {
+    background-color: #fff;
+    padding: 25px;
+    width: 380px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+/* spacing for inputs */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* label style */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* input fields */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* textarea size */
+textarea {
+    height: 90px;
+    resize: none;
+}
+
+/* submit button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* hover effect */
+button:hover {
+    background-color: #1e4ed8;
+}
