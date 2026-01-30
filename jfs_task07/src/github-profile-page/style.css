@@ -138,3 +138,50 @@ body {
 .repo-list li {
     margin-bottom: 8px;
 }
+
+/* responsive layout for tablets and mobile */
+@media (max-width: 900px) {
+
+    /* stack left and right sections */
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    /* full width profile card */
+    .left-panel {
+        width: 100%;
+        height: auto;
+    }
+
+    /* search bar full width */
+    .search-box {
+        width: 100%;
+    }
+
+    /* stack small cards vertically */
+    .cards-row {
+        flex-direction: column;
+    }
+
+    /* small cards full width */
+    .small-card {
+        width: 100%;
+    }
+}
+
+/* extra adjustment for very small screens */
+@media (max-width: 500px) {
+
+    /* reduce navbar text size */
+    .nav-title {
+        font-size: 16px;
+    }
+
+    /* reduce padding inside cards */
+    .small-card,
+    .large-card,
+    .left-panel {
+        padding: 15px;
+    }
+}
