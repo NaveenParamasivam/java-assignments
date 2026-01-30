@@ -25,4 +25,15 @@ I chose the **GitHub Profile Page Design** task and recreated the given design u
 - Dummy data is used only for display purposes
 
 ---
+## Deployed Assignment
+
+### GitHub Profile Page Design
+
+**Task:** GitHub Profile Page Design
+
+**Source Code:**  
+https://github.com/NaveenParamasivam/java-assignments/tree/main/jfs_task07
+
+**Deployed Link:**  
+https://naveenparamasivam.github.io/java-assignments/jfs_task07/src/github-profile-page/
 
