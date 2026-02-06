@@ -16,10 +16,6 @@ The data is loaded dynamically and displayed in a table with pagination controls
 - JavaScript
 - Bootstrap
 
-## How to Run
-1. Open `index.html` in a browser
-2. Use pagination buttons to navigate data
-
 ## Test Suite
 The Zen Class test suite is included inside the HTML file as required.
 
@@ -31,7 +27,11 @@ The Zen Class test suite is included inside the HTML file as required.
 **Task:** DOM Pagination Task
 
 **Source Code:**  
+https://github.com/NaveenParamasivam/java-assignments/tree/main/jfs_task08
 
+**Deployed Link (GitHub Pages):**  
+https://naveenparamasivam.github.io/java-assignments/jfs_task08/src/pagination/index.html
 
-**Deployed Link:**  
+**Deployed Link (Netlify):**  
+https://paginationdemo.netlify.app/
 
