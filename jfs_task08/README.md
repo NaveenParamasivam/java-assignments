@@ -26,6 +26,12 @@ The Zen Class test suite is included inside the HTML file as required.
 
 **Task:** DOM Pagination Task
 
+---
+## Demo Video
+
+https://github.com/NaveenParamasivam/java-assignments/blob/main/jfs_task08/jfs_task08_output_demo/pagination_task_demo.mp4
+
+---
 **Source Code:**  
 https://github.com/NaveenParamasivam/java-assignments/tree/main/jfs_task08
 
