@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+table {
+    background-color: white;
+}
+
+/* Pagination buttons spacing */
+#buttons button {
+    margin: 4px;
+}
+
+/* Active page style */
+#buttons button.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+    table {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
