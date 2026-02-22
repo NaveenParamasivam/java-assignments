@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View All Employees</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Employee Admin</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add.html">Add Employee</a>
+        <a href="viewOne.html">View By ID</a>
+    </aside>
+
+    <main class="content">
+        <div class="card">
+            <h2>All Employees</h2>
+            <div id="employeeTable"></div>
+        </div>
+    </main>
+
+</div>
+
+<script src="js/toast.js"></script>
+<script>
+    async function loadEmployees() {
+        const response = await fetch("http://localhost:9090/employees/displayAll");
+        const data = await response.json();
+
+        const container = document.getElementById("employeeTable");
+
+        let table = `
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+        `;
+
+        data.forEach(emp => {
+            table += `
+                <tr>
+                    <td>${emp.employeeId}</td>
+                    <td>${emp.name}</td>
+                    <td>${emp.email}</td>
+                    <td>${emp.location}</td>
+                    <td>
+                        <button onclick="deleteEmployee('${emp.employeeId}')">Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+
+        table += `</table>`;
+        container.innerHTML = table;
+    }
+
+    async function deleteEmployee(id) {
+        const response = await fetch(`http://localhost:9090/employees/delete/${id}`, {
+            method: "DELETE"
+        });
+
+        if (response.ok) {
+            showToast("Employee Deleted");
+            loadEmployees();
+        } else {
+            showToast("Delete Failed", "error");
+        }
+    }
+
+    loadEmployees();
+</script>
+
+</body>
+</html>

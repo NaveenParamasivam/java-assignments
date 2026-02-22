@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Employee</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Employee Admin</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add.html">Add Employee</a>
+        <a href="viewAll.html">View All</a>
+        <a href="viewOne.html">View By ID</a>
+    </aside>
+
+    <main class="content">
+        <div class="card">
+            <h2>Update Employee</h2>
+
+            <input type="text" id="searchId" placeholder="Enter Employee ID">
+            <button onclick="loadEmployee()">Load Employee</button>
+
+            <div id="updateSection" style="display:none; margin-top:20px;">
+
+                <input type="text" id="name" placeholder="Name">
+                <input type="email" id="email" placeholder="Email">
+                <input type="text" id="location" placeholder="Location">
+
+                <button onclick="updateEmployee()">Update</button>
+            </div>
+
+        </div>
+    </main>
+
+</div>
+
+<script src="js/toast.js"></script>
+<script>
+
+    let currentEmployeeId = "";
+
+    async function loadEmployee() {
+
+        const id = document.getElementById("searchId").value;
+
+        if (!id) {
+            showToast("Please enter Employee ID", "error");
+            return;
+        }
+
+        const response = await fetch(`http://localhost:9090/employees/display/${id}`);
+
+        if (response.ok) {
+            const emp = await response.json();
+
+            currentEmployeeId = emp.employeeId;
+
+            document.getElementById("name").value = emp.name;
+            document.getElementById("email").value = emp.email;
+            document.getElementById("location").value = emp.location;
+
+            document.getElementById("updateSection").style.display = "block";
+
+            showToast("Employee Loaded");
+        } else {
+            showToast("Employee Not Found", "error");
+        }
+    }
+
+    async function updateEmployee() {
+
+        const updatedEmployee = {
+            employeeId: currentEmployeeId,
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            location: document.getElementById("location").value
+        };
+
+        const response = await fetch(`http://localhost:9090/employees/update/${currentEmployeeId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedEmployee)
+        });
+
+        if (response.ok) {
+            showToast("Employee Updated Successfully");
+        } else {
+            showToast("Update Failed", "error");
+        }
+    }
+
+</script>
+
+</body>
+</html>

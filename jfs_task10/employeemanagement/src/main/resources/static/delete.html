@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Employee</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Employee Admin</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add.html">Add Employee</a>
+        <a href="viewAll.html">View All</a>
+        <a href="viewOne.html">View By ID</a>
+        <a href="update.html">Update</a>
+    </aside>
+
+    <main class="content">
+        <div class="card">
+            <h2>Delete Employee</h2>
+
+            <input type="text" id="deleteId" placeholder="Enter Employee ID">
+            <button onclick="deleteEmployee()">Delete</button>
+
+        </div>
+    </main>
+
+</div>
+
+<script src="js/toast.js"></script>
+<script>
+
+    async function deleteEmployee() {
+
+        const id = document.getElementById("deleteId").value;
+
+        if (!id) {
+            showToast("Please enter Employee ID", "error");
+            return;
+        }
+
+        const response = await fetch(`http://localhost:9090/employees/delete/${id}`, {
+            method: "DELETE"
+        });
+
+        if (response.ok) {
+            showToast("Employee Deleted Successfully");
+        } else {
+            showToast("Employee Not Found", "error");
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Employee Form</h2>
+
+    <form id="employeeForm">
+        <input type="text" id="employeeId" placeholder="Employee ID" required>
+        <input type="text" id="name" placeholder="Employee Name" required>
+        <input type="email" id="email" placeholder="Employee Email" required>
+        <input type="text" id="location" placeholder="Location" required>
+
+        <button type="submit">Save Employee</button>
+    </form>
+
+    <h3>All Employees</h3>
+    <button onclick="loadEmployees()">Refresh List</button>
+
+    <div id="employeeList"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

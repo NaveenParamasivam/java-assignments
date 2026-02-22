@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Employee By ID</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Employee Admin</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add.html">Add Employee</a>
+        <a href="viewAll.html">View All</a>
+    </aside>
+
+    <main class="content">
+        <div class="card">
+            <h2>Find Employee By ID</h2>
+
+            <input type="text" id="searchId" placeholder="Enter Employee ID">
+            <button onclick="findEmployee()">Search</button>
+
+            <div id="result" style="margin-top:20px;"></div>
+        </div>
+    </main>
+
+</div>
+
+<script src="js/toast.js"></script>
+<script>
+    async function findEmployee() {
+        const id = document.getElementById("searchId").value;
+
+        if (!id) {
+            showToast("Please enter Employee ID", "error");
+            return;
+        }
+
+        const response = await fetch(`http://localhost:9090/employees/display/${id}`);
+
+        if (response.ok) {
+            const emp = await response.json();
+
+            document.getElementById("result").innerHTML = `
+                <p><strong>ID:</strong> ${emp.employeeId}</p>
+                <p><strong>Name:</strong> ${emp.name}</p>
+                <p><strong>Email:</strong> ${emp.email}</p>
+                <p><strong>Location:</strong> ${emp.location}</p>
+            `;
+
+            showToast("Employee Found");
+        } else {
+            document.getElementById("result").innerHTML = "";
+            showToast("Employee Not Found", "error");
+        }
+    }
+</script>
+
+</body>
+</html>

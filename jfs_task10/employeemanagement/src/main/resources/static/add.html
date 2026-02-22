@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+    <aside class="sidebar">
+        <h2>Employee Admin</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="viewAll.html">View All</a>
+    </aside>
+
+    <main class="content">
+        <div class="card">
+            <h2>Add Employee</h2>
+
+            <input type="text" id="employeeId" placeholder="Employee ID">
+            <input type="text" id="name" placeholder="Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="text" id="location" placeholder="Location">
+
+            <button onclick="addEmployee()">Save</button>
+        </div>
+    </main>
+</div>
+
+<script src="js/toast.js"></script>
+<script>
+    async function addEmployee() {
+        const employee = {
+            employeeId: document.getElementById("employeeId").value,
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            location: document.getElementById("location").value
+        };
+
+        const response = await fetch("http://localhost:9090/employees", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(employee)
+        });
+
+        if (response.ok) {
+            showToast("Employee Added Successfully");
+        } else {
+            showToast("Error Adding Employee", "error");
+        }
+    }
+</script>
+
+</body>
+</html>

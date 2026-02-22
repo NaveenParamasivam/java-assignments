@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/jfs_task04/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jfs_task05/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jfs_task09/1_mysql_task/jdbc/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/jfs_task10/employeemanagement/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/out" />
     </content>
     <orderEntry type="inheritedJdk" />
