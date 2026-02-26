@@ -37,7 +37,7 @@ This is a Spring Boot web application designed to manage a product catalog. It f
 ## Output Screenshots
 
 ### Web Application Interfaces
-*(Note: Showing the Home screen, the Add Product form, and the tabular Display screen.)*
+
 
 ### Home Page
 ![Home Page](./output_screenshot/home.png)
@@ -51,7 +51,7 @@ This is a Spring Boot web application designed to manage a product catalog. It f
 ---
 
 ### Database View
-*(Note: Showing the product records successfully persisted in the MySQL `productdb` database.)*
+
 
 ### Database(Before Adding Product)
 ![Database](./output_screenshot/before_database.png)

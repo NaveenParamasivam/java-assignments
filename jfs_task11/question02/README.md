@@ -35,7 +35,7 @@ This is a Spring Boot web application that allows users to submit feedback for b
 ## Output Screenshots
 
 ### Web Application Interfaces
-*(Note: Please include screenshots of the form filled out, the success message after clicking submit, and the View Feedback table.)*
+
 
 ### Feedback Submit Form
 ![Feedback Submit Form](./output_screenshot/feedback_form.gif)
@@ -51,7 +51,6 @@ This is a Spring Boot web application that allows users to submit feedback for b
 ---
 
 ### Database View
-*(Note: Please include a screenshot of your MySQL client/workbench showing the saved records in the `feedbackdb` database.)*
 
 ### Database(Before Adding Product)
 ![Database](./output_screenshot/before_database.png)
