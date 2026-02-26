@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Feedback</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <h2>All Feedback</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Book</th>
+            <th>Feedback</th>
+        </tr>
+
+        <tr th:each="fb : ${feedbackList}">
+            <td th:text="${fb.name}"></td>
+            <td th:text="${fb.bookName}"></td>
+            <td th:text="${fb.feedback}"></td>
+        </tr>
+    </table>
+
+    <br>
+    <a th:href="@{/feedback}">Add New Feedback</a>
+</div>
+
+</body>
+</html>
